@@ -1,0 +1,26 @@
+.addDocument__form{
+    margin: 39px 0 0 0;
+    display: flex;
+    gap: 94px;
+}
+
+.addDocument__title{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.addDocument__title-text{
+    color: #4B4B4B;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.addDocument__title img{
+    transform: rotate(180deg);
+}
+
+.addDocument-form__image > *:not(:last-child){
+    margin-bottom: 36px;
+}
+

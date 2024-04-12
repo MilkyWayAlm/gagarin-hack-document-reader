@@ -1,0 +1,18 @@
+.myBtn{
+    border-radius: 8px;
+    background-color: #FF7250;
+    height: 42px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 19px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.myBtn:hover{
+    background-color: #F05935;
+}
+
+.myBtn:disabled{
+    background-color: #AFAFAF;
+}

@@ -4,6 +4,7 @@ import "./styles/MyDocuments.css"
 import information from "../../assets/information.svg"
 import DocumentsAdd from '../../components/DocumentsAdd/DocumentsAdd'
 import DocumentItem from '../../components/DocumentItem/DocumentItem'
+import { Link } from 'react-router-dom'
 
 function MyDocuments() {
   return (
@@ -11,7 +12,9 @@ function MyDocuments() {
         <h1 className='myDocuments__title'>Мои документы</h1>
         <div className='myDocuments__info'>
             <div className='myDocuments-info__documents'>
-                <DocumentsAdd/>
+                <Link to='/addDocument'>
+                    <DocumentsAdd/>
+                </Link>
                 <div className='documents'>
                     <DocumentItem title="Свидетельство о регистрации транспортного средства" series="11 11" number="111 111"/>
                     <DocumentItem title="Паспорт РФ" series="11 11" number="111 111"/>

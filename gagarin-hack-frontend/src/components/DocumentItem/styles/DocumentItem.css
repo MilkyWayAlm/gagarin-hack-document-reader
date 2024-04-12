@@ -3,7 +3,7 @@
     background-color: #F7F7F7;
     border-radius: 17px;
     padding: 23px 21px;
-    width: 492px;   
+    width: 100%;   
 }
 
 .documentItem > *:not(:last-child){

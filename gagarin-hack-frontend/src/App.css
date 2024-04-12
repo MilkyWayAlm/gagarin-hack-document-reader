@@ -26,6 +26,12 @@ body{
   margin: 0 auto;
 }
 
-.documentsBlock{
-  margin: 46px 0 0 0;
+._container2{
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+}
+
+.documentsBlock, .addDocumentBlock{
+  margin-top: 46px;
 }

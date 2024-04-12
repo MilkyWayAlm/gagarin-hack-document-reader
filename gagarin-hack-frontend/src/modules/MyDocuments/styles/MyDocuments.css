@@ -4,6 +4,10 @@
     font-size: 27px;
 }
 
+.myDocuments-info__documents{
+    width: 491px;
+}
+
 .myDocuments__info{
     display: flex;
     gap: 77px;
@@ -13,9 +17,9 @@
 .myDocuments-info__description{
     background-color: #E3EAF1;
     border-radius: 17px;
-    width: 631px;
-    padding: 38px 59px;
-    height: 227px;
+    width: 454px;
+    padding: 38px 42px 48px 58px;
+    height: 260px;
 }
 
 .myDocuments-description__title{

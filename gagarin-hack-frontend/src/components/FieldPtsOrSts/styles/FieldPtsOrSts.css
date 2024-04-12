@@ -1,0 +1,37 @@
+.fieldPtsOrSts{
+    background-color: #E3EAF1;
+    border-radius: 17px;
+    width: 605px;
+    height: 229px;
+    padding: 34px 20px;
+}
+
+.fieldPtsOrSts > *:not(:last-child){
+    margin-bottom: 25px;
+}
+
+.fieldsSeriesAndNumber{
+    display: flex;
+    gap: 54px;
+}
+
+.field-title{
+    color: #4B4B4B;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.field-input{
+    height: 38px;
+    border: none;
+    min-width: 218px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #4B4B4B;
+    font-weight: 700;
+    padding: 0 0 0 17px;
+}
+
+._field > *:not(:last-child){
+    margin-bottom: 11px;
+}
