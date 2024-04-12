@@ -1,0 +1,10 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.navBar-logo{
+    margin: 0 0 0 -12px;
+}

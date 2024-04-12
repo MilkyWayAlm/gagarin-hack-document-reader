@@ -1,0 +1,42 @@
+.myDocuments__title{
+    color: #4B4B4B;
+    font-weight: 700;
+    font-size: 27px;
+}
+
+.myDocuments__info{
+    display: flex;
+    gap: 77px;
+    margin: 37px 0 0 0;
+}
+
+.myDocuments-info__description{
+    background-color: #E3EAF1;
+    border-radius: 17px;
+    width: 631px;
+    padding: 38px 59px;
+    height: 227px;
+}
+
+.myDocuments-description__title{
+    color: #4B4B4B;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.myDocuments-description__subtitle{
+    color: #8F8F8F;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.myDocuments-info__description > *:not(:last-child){
+    margin-bottom: 19px;
+}
+
+.documents > *{
+    margin: 23px 0 0 0;
+}
