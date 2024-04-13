@@ -64,6 +64,11 @@
 
     .addDocument__form{
         flex-direction: column;
+        gap: 32px;
+    }
+
+    .addDocument-form__image > *:not(:last-child){
+        margin-bottom: 26px;
     }
 
     .addDocument-form__image{
