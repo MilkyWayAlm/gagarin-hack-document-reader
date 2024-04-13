@@ -12,3 +12,25 @@
     background-color: #F7F7F7;
     cursor: pointer;
 }
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .documentsAdd{
+        position: fixed;
+        width: 62px;
+        height: 62px;
+        right: 32px;
+        bottom: 31px;
+        background-color: #E3EAF1;
+        background-image: none;
+    }
+
+    .documentsAdd:hover{
+        background-color: #a8b9ca;
+    }
+
+    .documentsAdd img{
+        width: 36px;
+        height: 36px;
+    }
+}

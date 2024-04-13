@@ -44,3 +44,15 @@
 .documents > *{
     margin: 23px 0 0 0;
 }
+
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .myDocuments__title{
+        font-size: 20px;
+    }
+
+    .myDocuments-info__description{
+        display: none;
+    }
+}

@@ -36,3 +36,14 @@ body{
 .documentsBlock, .addDocumentBlock, .documentViewBlock{
   margin-top: 46px;
 }
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+  ._container{
+    width: 343px;
+  }
+
+  ._container2{
+    width: 343px;
+  }
+}
