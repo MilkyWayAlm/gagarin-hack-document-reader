@@ -1,21 +1,28 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Scan App",
+  "name": "Классификатор сканов",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "./logoSite.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "./logoItam.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "./logoSite.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./logoSite.svg",
+      "sizes": "144x144",
+      "type": "image/x-icon",
+      "purpose": "any"
     }
   ],
   "start_url": ".",

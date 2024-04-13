@@ -47,14 +47,15 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
   useEffect(() => {
     if(serverResponse){
       let serverType = serverResponse.type || ' ';
+      console.log(serverType);
       if (serverType === "personal_passport"){
         setType("Паспорт РФ")
       } else if (serverType === "vehicle_certificate"){
-        setType("СТС")
+        setType("Свидетельство о регистрации транспортного средства")
       } else if (serverType === "vehicle_passport"){
-        setType("ПТС")
+        setType("Паспорт транспортного средства")
       } else if (serverType === "drive_license"){
-        setType("В/У")
+        setType("Водительское удостоверение")
       } else {
         setType("Другое");
         setCustomType(serverType);
@@ -80,9 +81,9 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
         <select className='typeDocument__select' value={type} onChange={handleTypeChange}>
           <option disabled value="">Выберите тип документа</option>
           <option value="СТС">Свидетельство о регистрации транспортного средства</option>
-          <option value="ПТС">Паспорт транспортного средства</option>
+          <option value="Паспорт транспортного средства">Паспорт транспортного средства</option>
           <option value="Паспорт РФ">Паспорт РФ</option>
-          <option value="В/У">Водительское удостоверение</option>
+          <option value="Водительское удостоверение">Водительское удостоверение</option>
           <option value="Другое">Другое</option>
         </select>
         {type === "Другое" && (
