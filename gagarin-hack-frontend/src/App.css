@@ -18,6 +18,7 @@ h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
 body{
     font-family: "Inter";
     background-color: #FDFDFD;
+    padding: 0 0 15px 0;
 }
 
 ._container{

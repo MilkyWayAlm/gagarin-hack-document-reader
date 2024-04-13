@@ -6,6 +6,10 @@
     width: 100%;   
 }
 
+.documentItem:hover{
+    background-color: #EFEFEF;
+}
+
 .documentItem > *:not(:last-child){
     margin-bottom: 19px;
 }
@@ -31,4 +35,8 @@
 .documentItem-fields span{
     color: #4B4B4B;
     font-weight: 700;
+}
+
+.documentItem-link{
+    text-decoration: none;
 }

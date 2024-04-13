@@ -1,8 +1,8 @@
-// FieldPtsOrSts.jsx
+// FieldDriveLicense.jsx
 import React from 'react';
-import './styles/FieldPtsOrSts.css';
+import './styles/FieldDriveLicense.css';
 
-function FieldPtsOrSts({ setSeries, setNumber, setFullName, setDateBirthday, setPlaceOfBirthday, setNumberPage }) {
+function FieldDriveLicense({ setSeries, setNumber, setFullName, setDateBirthday, setPlaceOfBirthday, setNumberPage }) {
   const handleSeriesChange = (e) => {
     setSeries(e.target.value);
   };
@@ -28,7 +28,19 @@ function FieldPtsOrSts({ setSeries, setNumber, setFullName, setDateBirthday, set
   };
 
   return (
-    <div className='fieldPtsOrSts'>
+    <div className='fieldDriveLicense'>
+      <div className='fio _field'>
+        <p className='field-title'>ФИО:</p>
+        <input type='text' className='field-input' style={{width: "100%"}} onChange={handleFullNameChange} />
+      </div>
+      <div className='fieldDateBirthday _field'>
+        <p className='field-title'>Дата рождения:</p>
+        <input type='text' className='field-input' onChange={handleDateBirthdayChange} />
+      </div>
+      <div className='fieldPlaceOfBirth _field'>
+        <p className='field-title'>Место рождения:</p>
+        <input type='text' className='field-input' onChange={handlePlaceOfBirthdayChange} />
+      </div>
       <div className='fieldsSeriesAndNumber'>
         <div className='fieldSeries _field'>
           <p className='field-title'>Серия: </p>
@@ -47,4 +59,4 @@ function FieldPtsOrSts({ setSeries, setNumber, setFullName, setDateBirthday, set
   );
 }
 
-export default FieldPtsOrSts;
+export default FieldDriveLicense;

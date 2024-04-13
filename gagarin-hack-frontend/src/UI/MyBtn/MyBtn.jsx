@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import cl from './MyBtn.module.css'
 
-function MyBtn({children}) {
+function MyBtn({children, onClick}) {
   return (
-    <a className={cl.myBtn}>{children}</a>
+    <a onClick={onClick} className={cl.myBtn}>{children}</a>
   )
 }
 

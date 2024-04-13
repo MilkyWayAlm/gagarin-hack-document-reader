@@ -1,35 +1,34 @@
-.addDocument__form{
+.documentView__form{
     margin: 39px 0 0 0;
     display: flex;
     gap: 94px;
 }
 
-.addDocument__title{
+.documentView__title{
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.addDocument__title-text{
+.documentView__title-text{
     color: #4B4B4B;
     font-size: 27px;
     font-weight: 700;
 }
 
-.addDocument__title img{
+.documentView__title img{
     transform: rotate(180deg);
 }
 
-.addDocument__title img:hover{
+.documentView__title img:hover{
     filter: sepia(1) hue-rotate(320deg) saturate(10);
 }
 
-.addDocument-form__image > *:not(:last-child){
+.documentView-form__image > *:not(:last-child){
     margin-bottom: 36px;
 }
 
-.disabled > *{
+.disabledView > *{
     cursor: not-allowed;
     pointer-events: none;
-    filter: grayscale(100%);
 }

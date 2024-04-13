@@ -13,6 +13,6 @@
     background-color: #F05935;
 }
 
-.myBtn:disabled{
+.myBtn.disabled{
     background-color: #AFAFAF;
 }

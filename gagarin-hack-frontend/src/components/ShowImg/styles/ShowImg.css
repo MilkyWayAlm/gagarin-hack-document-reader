@@ -1,0 +1,28 @@
+.imgFile{
+    width: 247px;
+    height: 247px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.imgFileContainer__img, .imgFileContainer{
+    width: inherit;
+    height: inherit;
+}
+
+.imgFileEmpty{
+    width: 247px;
+    height: 247px;
+    border: 1px solid #8A8A8A;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #EFF5FF;
+}
