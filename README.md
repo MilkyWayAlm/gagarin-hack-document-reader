@@ -38,8 +38,7 @@ Team Members:
 2) FRONTEND React Реализована автоматическая сборка и загрузка на сервер статической части сайта. https://github.com/l1ghtsource/gagarin-hack-document-reader/blob/main/.github/workflows/front_build_deplloy.yaml
 3) На сервере работает traefik в режиме reverse-proxy. Он разделяет запросы к API и запросы к сайту между докер-контейнерами API и frontend
 
-Может сюда пример работы программы в гифке запиздячить, я хз 
-
+![architecture](architecture.png)
 
 ## Запуск решения для теста
 исходный код фронтенда лежит в gagarin-hack-frontend
