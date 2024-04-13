@@ -46,7 +46,7 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
 
   useEffect(() => {
     if(serverResponse){
-      let serverType = serverResponse.type || ' ';
+      let serverType = serverResponse[0].type || ' ';
       if (serverType === "personal_passport"){
         setType("Паспорт РФ")
       } else if (serverType === "vehicle_certificate"){
@@ -60,10 +60,10 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
         setCustomType(serverType);
       }
 
-      setNumber(serverResponse.number || ' ')
-      setSeries(serverResponse.series || ' ')
-      setConfidence(serverResponse.confidence || ' ')
-      setNumberPage(serverResponse.page_number || ' ')
+      setNumber(serverResponse[0].number || ' ')
+      setSeries(serverResponse[0].series || ' ')
+      setConfidence(serverResponse[0].confidence || ' ')
+      setNumberPage(serverResponse[0].page_number || ' ')
     }
   }, [serverResponse])
 

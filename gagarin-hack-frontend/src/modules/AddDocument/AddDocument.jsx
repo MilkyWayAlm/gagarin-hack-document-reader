@@ -50,11 +50,11 @@ function AddDocument({ uploaded, setDocuments, documents }) {
     setServerResponse(response);
 
     console.log(response)
-    console.log("ТИП: ", response.type)
-    console.log("НОМЕР: ", response.number)
-    console.log("СЕРИЯ: ", response.series)
-    console.log("ТОЧНОСТЬ ", response.confidence)
-    console.log("НОМЕР СТРАНИЦЫ: ", response.page_number)
+    console.log("ТИП: ", response[0].type)
+    console.log("НОМЕР: ", response[0].number)
+    console.log("СЕРИЯ: ", response[0].series)
+    console.log("ТОЧНОСТЬ ", response[0].confidence)
+    console.log("НОМЕР СТРАНИЦЫ: ", response[0].page_number)
   }
 
   return (
