@@ -9,10 +9,10 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
   const [customType, setCustomType] = useState('');
   const [series, setSeries] = useState('');
   const [number, setNumber] = useState('');
-  const [fullName, setFullName] = useState('');
-  const [dateBirthday, setDateBirthday] = useState('');
-  const [placeOfBirthday, setPlaceOfBirthday] = useState('');
-  const [gender, setGender] = useState('');
+  // const [fullName, setFullName] = useState('');
+  // const [dateBirthday, setDateBirthday] = useState('');
+  // const [placeOfBirthday, setPlaceOfBirthday] = useState('');
+  // const [gender, setGender] = useState('');
   const [numberPage, setNumberPage] = useState('');
   const [confidence, setConfidence] = useState('');
 
@@ -33,15 +33,15 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
       type: type === "Другое" ? customType : type,
       series,
       number,
-      fullName,
-      dateBirthday,
-      placeOfBirthday,
-      gender,
+      // fullName,
+      // dateBirthday,
+      // placeOfBirthday,
+      // gender,
       numberPage
     };
   
     setDocumentFields(newFields);
-    onClick(newFields); // передаем newFields вместо documentFields
+    onClick(newFields);
   };
 
   useEffect(() => {
@@ -66,7 +66,7 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
       setConfidence(serverResponse.confidence || ' ')
       setNumberPage(serverResponse.page_number || ' ')
     }
-  }, [serverResponse])
+  }, [serverResponse, type, number, series, confidence, numberPage])
 
   return (
     <div className='document__fields'>
@@ -97,15 +97,7 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
           series,
           numberPage,
         }}
-        setFields={{
-          setSeries,
-          setNumber,
-          setFullName,
-          setGender,
-          setDateBirthday,
-          setPlaceOfBirthday,
-          setNumberPage,
-        }}
+        serverResponse={serverResponse}
         />
       </div>
       <div className='btnAdd'>

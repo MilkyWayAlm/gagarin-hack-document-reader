@@ -1,10 +1,11 @@
 // FieldPtsOrSts.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/FieldPtsOrSts.css';
 
-function FieldPtsOrSts({ fields, setFields }) {
-  const {series, number, numberPage} = fields
-  const {setSeries, setNumber, setNumberPage} = setFields
+function FieldPtsOrSts({ fields, serverResponse }) {
+  const [series, setSeries] = useState(fields.series);
+  const [number, setNumber] = useState(fields.number);
+  const [numberPage, setNumberPage] = useState(fields.numberPage)
   const handleSeriesChange = (e) => {
     setSeries(e.target.value);
   };
@@ -18,10 +19,10 @@ function FieldPtsOrSts({ fields, setFields }) {
   };
 
   useEffect(() =>{
-    setSeries(series);
-    setNumber(number);
-    setNumberPage(numberPage);
-  }, [series, number, numberPage, setNumber, setSeries, setNumberPage]);
+    setSeries(fields.series);
+    setNumber(fields.number);
+    setNumberPage(fields.numberPage);
+  }, [fields]);
 
   return (
     <div className='fieldPtsOrSts'>
