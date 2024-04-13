@@ -3,11 +3,25 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="./logoSite.svg" type="image/x-icon" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./logoSite.svg"/>
+    <link rel="description" content="Гагарин Хакатон Классификатор сканов MISIS status.md"/>
+    <link rel="preload" href="../src/assets/logo.svg" as="image">
     <title>Классификатор сканов</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root"></div> 
+    <script>
+      if('serviceWorker' in navigator){
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./serviceWorker.js')
+            .then((reg) => console.log('Success: ', reg.scope))
+            .catch((err) => console.log('Failure: ', err))
+        })
+      }
+    </script>
   </body>
 </html>
