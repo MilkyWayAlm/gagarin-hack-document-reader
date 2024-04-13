@@ -12,7 +12,6 @@ export default class SendServer {
                     },
                 }
             );
-            console.log(response.data);
             return response.data;
         } catch (error) {
             console.error(error);

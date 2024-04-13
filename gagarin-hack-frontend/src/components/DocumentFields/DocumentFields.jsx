@@ -47,7 +47,11 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
   useEffect(() => {
     if(serverResponse){
       let serverType = serverResponse.type || ' ';
-      console.log(serverResponse.type)
+      console.log("ТИП: ", serverResponse.type)
+      console.log("НОМЕР: ", serverResponse.number)
+      console.log("СЕРИЯ: ", serverResponse.series)
+      console.log("ТОЧНОСТЬ ", serverResponse.confidence)
+      console.log("НОМЕР СТРАНИЦЫ: ", serverResponse.page_number)
       if (serverType === "personal_passport"){
         setType("Паспорт РФ")
       } else if (serverType === "vehicle_certificate"){
@@ -66,7 +70,7 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
       setConfidence(serverResponse.confidence || ' ')
       setNumberPage(serverResponse.page_number || ' ')
     }
-  }, [serverResponse, type, number, series, confidence, numberPage])
+  }, [serverResponse])
 
   return (
     <div className='document__fields'>
@@ -96,6 +100,11 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
           number,
           series,
           numberPage,
+        }}
+        setFields={{
+          setSeries,
+          setNumber,
+          setNumberPage,
         }}
         serverResponse={serverResponse}
         />
