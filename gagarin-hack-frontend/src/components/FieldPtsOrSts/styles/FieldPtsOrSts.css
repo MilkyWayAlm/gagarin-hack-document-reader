@@ -24,7 +24,7 @@
 .field-input{
     height: 38px;
     border: none;
-    min-width: 218px;
+    width: 218px;
     border-radius: 8px;
     font-size: 15px;
     color: #4B4B4B;
@@ -34,4 +34,16 @@
 
 ._field > *:not(:last-child){
     margin-bottom: 11px;
+}
+
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .fieldPtsOrSts{
+        width: 330px;
+    }
+
+    .field-input{
+        width: 120px;
+    }
 }

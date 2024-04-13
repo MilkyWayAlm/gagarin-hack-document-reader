@@ -53,3 +53,30 @@
 .btnAdd{
     margin: 40px 0 0 0;
 }
+
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .typeDocument{
+        width: 330px;
+        padding: 24px 20px;
+    }
+
+
+    .typeDocument__select, .typeDocument__input{
+        width: 300px;
+    }
+
+    .typeDocument__text{
+        font-size: 12px;
+        color: red;
+    }
+
+    .document__fields{
+        width: 300px;
+    }
+
+    .mainField{
+        width: 330px;
+    }
+}

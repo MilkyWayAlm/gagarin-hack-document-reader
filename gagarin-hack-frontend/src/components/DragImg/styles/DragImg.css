@@ -57,3 +57,21 @@
     padding: 10px;
 }
 
+/********* MOBILE **********/
+@media (max-width: 576px) {
+  .drop-area{
+    width: 155px;
+    height: 155px;
+    background-image: none;
+    background-color: #E3EAF1;
+    font-size: 12px;
+    text-align: center;
+    gap: 14px;
+    color: #4B4B4B;
+}
+
+  .drop-area img{
+    width: 47px;
+    height: 47px;
+  }
+}

@@ -5,6 +5,7 @@ import DragImg from '../../components/DragImg/DragImg';
 import MyBtn from '../../UI/MyBtn/MyBtn';
 import DocumentFields from '../../components/DocumentFields/DocumentFields';
 import prev from '../../assets/next.svg';
+import camera from '../../assets/camera.svg';
 import './styles/AddDocument.css';
 import Service from '../../api/Service'
 
@@ -58,16 +59,24 @@ function AddDocument({ uploaded, setDocuments, documents }) {
       </div>
       <div className='addDocument__form'>
         <div className='addDocument-form__image'>
-          <DragImg uploaded={uploaded} />
+          <div className='addDocument-form__btns'>
+            <DragImg uploaded={uploaded} />
+            <div className='camera'>
+              <img src={camera} alt='camera' className='camera-img'/>
+              <div className='camera-text'>Сделать фото</div>
+            </div>
+          </div>
           <div className={isDisabled ? 'disabled' : ''}>
             <MyBtn onClick={() => sendDataToServer(uploadedFiles[0])}>Обработать данные</MyBtn>
           </div>
         </div>
+        <div>
         <DocumentFields 
         setDocumentFields={setDocumentFields} 
         documentFields={documentFields} 
         onClick={handleAddDocument}
         serverResponse={serverResponse}/>
+        </div>
       </div>
     </div>
   );
