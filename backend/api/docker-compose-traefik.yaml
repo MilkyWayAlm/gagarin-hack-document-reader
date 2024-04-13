@@ -1,0 +1,36 @@
+services:
+  api:
+    build:
+      context: api
+      dockerfile: ../Dockerfile_api
+    labels:
+     - traefik.enable=true
+     - traefik.http.routers.api.rule=Host(`statusmd.itatmisis.ru`)  && PathPrefix(`/api`)
+     - traefik.http.routers.api.entrypoints=web
+     - traefik.http.services.api.loadbalancer.server.port=80
+     - traefik.http.middlewares.api_strip_prefix.stripprefix.prefixes=/api
+     - traefik.http.routers.api.middlewares=api_strip_prefix
+     - traefik.docker.network=web
+
+  ocr_1:
+    build:
+      context: ocr_1
+      dockerfile: ../Dockerfile_ocr_1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    volumes:
+     - ${YOLO_PATH}:/weights
+     - ${EASYOCR_PATH}:/.EasyOCR
+
+
+
+networks:
+  web:
+    external: true
+  internal:
+    external: false
