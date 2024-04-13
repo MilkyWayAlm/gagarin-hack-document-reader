@@ -17,12 +17,11 @@ function FieldPtsOrSts({ fields, setFields }) {
     setNumberPage(e.target.value);
   };
 
-  // eslint-disable-next-line
   useEffect(() =>{
     setSeries(series);
     setNumber(number);
     setNumberPage(numberPage);
-  }, [series, number, numberPage]);
+  }, [series, number, numberPage, setNumber, setSeries, setNumberPage]);
 
   return (
     <div className='fieldPtsOrSts'>
