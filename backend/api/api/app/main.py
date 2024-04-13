@@ -27,12 +27,20 @@ app.add_middleware(
 def read_root():
     return {"Hello": "World"}
 
+
 @app.post("/detect")
 def detect(data: dict):
     res = requests.get("http://ocr_1/get_pred", json=data).json()
     if type(res) is list:
         return res[0]
-    return res
+    else:
+        return {
+            'type': 'notFound',
+            'confidence': 0.0,
+            'series': '',
+            'number': '',
+            'page_number': -1,
+            }
 
 @app.post("/detect_multiple")
 def detect_multiple(data: dict):
