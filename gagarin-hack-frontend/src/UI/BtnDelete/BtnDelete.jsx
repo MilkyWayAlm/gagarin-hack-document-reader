@@ -4,7 +4,7 @@ import cl from "./BtnDelete.module.css"
 
 function BtnDelete({children, onClick}) {
   return (
-    <a onClick={onClick} className={cl.btnDelete}>{children}</a>
+    <button onClick={onClick} className={cl.btnDelete}>{children}</button>
   )
 }
 
