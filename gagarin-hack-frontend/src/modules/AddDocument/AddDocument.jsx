@@ -31,13 +31,13 @@ function AddDocument({ uploaded, setDocuments, documents }) {
 
   const handleAddDocument = (fields) => {
     const newDocument = {
-      id: (documents && documents.length ? documents.length + 1 : 1),
+      id: documents.length + 1,
       image: uploadedFiles.length > 0 ? uploadedFiles[0] : '', // Add image if available
-      ...(fields || {})
+      ...fields
     };
   
     console.log(newDocument);
-    setDocuments(prevDocuments => [...(prevDocuments || []), newDocument]);
+    setDocuments(prevDocuments => [...prevDocuments, newDocument]);
   
     // Optionally, clear uploaded files or perform other actions
     setUploadedFiles([]);
