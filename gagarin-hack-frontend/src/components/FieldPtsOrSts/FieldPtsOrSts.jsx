@@ -2,7 +2,9 @@
 import React, { useEffect } from 'react';
 import './styles/FieldPtsOrSts.css';
 
-function FieldPtsOrSts({ setSeries, setNumber, setGender, setFullName, setDateBirthday, setPlaceOfBirthday, setNumberPage, number, numberPage, series }) {
+function FieldPtsOrSts({ fields, setFields }) {
+  const {series, number, numberPage} = fields
+  const {setSeries, setNumber, setNumberPage} = setFields
   const handleSeriesChange = (e) => {
     setSeries(e.target.value);
   };
@@ -15,6 +17,7 @@ function FieldPtsOrSts({ setSeries, setNumber, setGender, setFullName, setDateBi
     setNumberPage(e.target.value);
   };
 
+  // eslint-disable-next-line
   useEffect(() =>{
     setSeries(series);
     setNumber(number);

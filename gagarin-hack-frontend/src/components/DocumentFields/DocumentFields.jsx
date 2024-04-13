@@ -92,16 +92,21 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
       </div>
       <div className='mainField'>
         <FieldPtsOrSts 
-        number={number}
-        series={series}
-        numberPage={numberPage}
-        setSeries={setSeries} 
-        setNumber={setNumber} 
-        setFullName={setFullName} 
-        setGender={setGender}
-        setDateBirthday={setDateBirthday} 
-        setPlaceOfBirthday={setPlaceOfBirthday} 
-        setNumberPage={setNumberPage} />
+        fields={{
+          number,
+          series,
+          numberPage,
+        }}
+        setFields={{
+          setSeries,
+          setNumber,
+          setFullName,
+          setGender,
+          setDateBirthday,
+          setPlaceOfBirthday,
+          setNumberPage,
+        }}
+        />
       </div>
       <div className='btnAdd'>
         <MyBtn onClick={handleAddDocument}>Добавить в "Мои документы"</MyBtn>
