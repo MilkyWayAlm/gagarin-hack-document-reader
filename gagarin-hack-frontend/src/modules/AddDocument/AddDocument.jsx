@@ -48,6 +48,18 @@ function AddDocument({ uploaded, setDocuments, documents }) {
   async function sendDataToServer(image){
     const response = await Service.sendDataToServer(image)
     setServerResponse(response);
+
+    console.log("ТИП: ", response.type)
+    console.log("НОМЕР: ", response.number)
+    console.log("СЕРИЯ: ", response.series)
+    console.log("ТОЧНОСТЬ ", response.confidence)
+    console.log("НОМЕР СТРАНИЦЫ: ", response.page_number)
+    console.log("ТИП: ", serverResponse.type)
+    console.log("НОМЕР: ", serverResponse.number)
+    console.log("СЕРИЯ: ", serverResponse.series)
+    console.log("ТОЧНОСТЬ ", serverResponse.confidence)
+    console.log("НОМЕР СТРАНИЦЫ: ", serverResponse.page_number)
+
     console.log(response)
   }
 
