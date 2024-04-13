@@ -26,7 +26,9 @@ Team Members:
 
 **Компьютерное зрение:** 
 1) Для определения границ документа и классификации его типа и страницы используется модель YoloV8m. При необходимости можно использовать более легковесные модели данной архитектуры. Экспериментально было обнаружено, что это не критически сказывается на качестве работы модели. Пайплайн обучения можно найти в [YOLO_training_pipeline.ipynb](https://github.com/l1ghtsource/gagarin-hack-document-reader/blob/main/ml/Yolo_training_pipeline.ipynb)
-2) Для оптического распознавания символов применяется EasyOсr. По результатам тестов и изучения статей данное решение показало наилучшее соотношение качества распознавания и времени работы. Подробнее о работе алгоритма оптического распознавания в [gagarin-final.ipynb](https://github.com/l1ghtsource/gagarin-hack-document-reader/blob/main/ml/gagarin-final.ipynb)
+2) Для оптического распознавания символов применяется EasyOCR. По результатам тестов и изучения статей данное решение показало наилучшее соотношение качества распознавания и времени работы. Подробнее о работе алгоритма оптического распознавания в [gagarin-final.ipynb](https://github.com/l1ghtsource/gagarin-hack-document-reader/blob/main/ml/gagarin-final.ipynb)
+
+Почему именно EasyOCR: [blog.roboflow.com/best-ocr-models-text-recognition](https://blog.roboflow.com/best-ocr-models-text-recognition/)
 
 
 **Серверная часть: (Напишите тут как-то правильным языком)**
