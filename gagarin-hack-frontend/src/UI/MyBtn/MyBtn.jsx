@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import cl from './MyBtn.module.css'
 
 function MyBtn({children, onClick}) {

@@ -11,18 +11,6 @@ function FieldPtsOrSts({ setSeries, setNumber, setFullName, setDateBirthday, set
     setNumber(e.target.value);
   };
 
-  const handleFullNameChange = (e) => {
-    setFullName(e.target.value);
-  };
-
-  const handleDateBirthdayChange = (e) => {
-    setDateBirthday(e.target.value);
-  };
-
-  const handlePlaceOfBirthdayChange = (e) => {
-    setPlaceOfBirthday(e.target.value);
-  };
-
   const handleNumberPageChange = (e) => {
     setNumberPage(e.target.value);
   };

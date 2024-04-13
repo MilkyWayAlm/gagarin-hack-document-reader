@@ -1,9 +1,9 @@
 import React from 'react'
-import MyBtn from '../../UI/MyBtn/MyBtn'
 import FieldDriveLicenseView from '../FieldDriveLicenseView/FieldDriveLicenseView'
 import FieldPassportView from '../FieldPassportView/FieldPassportView'
 import './styles/DocumentFieldsView.css'
 import FieldPtsOrStsView from '../FieldPtsOrStsView/FieldPtsOrStsView'
+import BtnDelete from '../../UI/BtnDelete/BtnDelete'
 
 function DocumentFieldsView({document}) {
   return (
@@ -21,7 +21,7 @@ function DocumentFieldsView({document}) {
         : <FieldPtsOrStsView document={document}/>}
       </div>
       <div className='btnAdd'>
-        <MyBtn>Удалить документ</MyBtn>
+        <BtnDelete>Удалить документ</BtnDelete>
       </div>
     </div>
   )

@@ -1,0 +1,16 @@
+.btnDelete{
+    border-radius: 8px;
+    background-color: #DF0000;
+    width: 179px;
+    height: 42px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnDelete:hover{
+    background-color: #C50000;
+}
