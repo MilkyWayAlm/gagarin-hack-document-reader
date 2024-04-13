@@ -1,0 +1,25 @@
+services:
+  api:
+    build:
+      context: api
+      dockerfile: ../Dockerfile_api
+    ports:
+     - "8008:80"
+
+  ocr_1:
+    build:
+      context: ocr_1
+      dockerfile: ../Dockerfile_ocr_1
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    ports:
+     - "8007:80"
+    volumes:
+     - /home/rdinit/yolov5_weights:/weights
+     - /home/rdinit/easyocr_models:/.EasyOCR
+
