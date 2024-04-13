@@ -11,6 +11,7 @@ function DocumentView({documents, setDocuments}) {
     const document = documents.find(doc => doc.id === Number(id)); 
 
     const deleteDocument = () => {
+        console.log('DELETE')
         setDocuments(documents.filter(doc => doc.id !== Number(id)));
     }
 
