@@ -4,9 +4,21 @@
     padding: 32px 23px 37px 20px;
 }
 
+.typeDocument__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .typeDocument__text{
     color: #4B4B4B;
     font-size: 15px;
+    font-weight: 500;
+}
+
+.document__confidence{
+    font-size: 15px;
+    color: #919191;
     font-weight: 500;
 }
 

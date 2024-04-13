@@ -2,9 +2,7 @@
 import React, { useState } from 'react';
 import './styles/DocumentFields.css';
 import FieldPtsOrSts from '../FieldPtsOrSts/FieldPtsOrSts';
-import FieldPassport from '../FieldPassport/FieldPassport';
 import MyBtn from '../../UI/MyBtn/MyBtn';
-import FieldDriveLicense from '../FieldDriveLicense/FieldDriveLicense';
 
 function DocumentFields({ setDocumentFields, documentFields, onClick }) {
   const [type, setType] = useState('');
@@ -16,6 +14,7 @@ function DocumentFields({ setDocumentFields, documentFields, onClick }) {
   const [placeOfBirthday, setPlaceOfBirthday] = useState('');
   const [gender, setGender] = useState('');
   const [numberPage, setNumberPage] = useState('');
+  // const [confidence, setConfidence] = useState('');
 
   const handleTypeChange = (e) => {
     const selectedType = e.target.value;
@@ -48,7 +47,13 @@ function DocumentFields({ setDocumentFields, documentFields, onClick }) {
   return (
     <div className='document__fields'>
       <div className='typeDocument'>
-        <p className='typeDocument__text'>Тип документа:</p>
+        <div className='typeDocument__top'>
+          <p className='typeDocument__text'>Тип документа:</p>
+          {/* {confidence !== '' && (
+            <p className='document__confidence'>точность: {confidence}</p>
+          )} */}
+          
+        </div>
         <select className='typeDocument__select' value={type} onChange={handleTypeChange}>
           <option disabled value="">Выберите тип документа</option>
           <option value="СТС">Свидетельство о регистрации транспортного средства</option>
@@ -62,31 +67,14 @@ function DocumentFields({ setDocumentFields, documentFields, onClick }) {
         )}
       </div>
       <div className='mainField'>
-        {type === 'Паспорт РФ' 
-        ? 
-        <FieldPassport 
+        <FieldPtsOrSts 
         setSeries={setSeries} 
         setNumber={setNumber} 
         setFullName={setFullName} 
+        setGender={setGender}
         setDateBirthday={setDateBirthday} 
         setPlaceOfBirthday={setPlaceOfBirthday} 
-        setGender={setGender} 
-        setNumberPage={setNumberPage} /> 
-        : type === 'В/У' || type === 'Водительское удостоверение' 
-        ? <FieldDriveLicense 
-        setSeries={setSeries} 
-        setNumber={setNumber} 
-        setFullName={setFullName} 
-        setDateBirthday={setDateBirthday} 
-        setPlaceOfBirthday={setPlaceOfBirthday} 
-        setNumberPage={setNumberPage} /> 
-        : <FieldPtsOrSts 
-        setSeries={setSeries} 
-        setNumber={setNumber} 
-        setFullName={setFullName} 
-        setDateBirthday={setDateBirthday} 
-        setPlaceOfBirthday={setPlaceOfBirthday} 
-        setNumberPage={setNumberPage} />}
+        setNumberPage={setNumberPage} />
       </div>
       <div className='btnAdd'>
         <MyBtn onClick={handleAddDocument}>Добавить в "Мои документы"</MyBtn>

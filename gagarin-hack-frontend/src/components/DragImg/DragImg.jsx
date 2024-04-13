@@ -26,11 +26,11 @@ function DragImg({ uploaded }) {
         e.preventDefault()
         let file = e.dataTransfer.files[0];
 
-        const formData = new FormData()
-        formData.append('file', file)
-
-        // Добавление загруженных файлов в массив
-        setUploadedFiles([file])
+        const reader = new FileReader();
+        reader.onloadend = function(){
+            setUploadedFiles([reader.result])
+        }
+        reader.readAsDataURL(file);
 
         setDrag(false)
     }
@@ -41,7 +41,11 @@ function DragImg({ uploaded }) {
 
     function onFileInputChange(event) {
         const file = event.target.files[0];
-        setUploadedFiles([file]);
+        const reader = new FileReader();
+        reader.onloadend = function() {
+            setUploadedFiles([reader.result])
+        }
+        reader.readAsDataURL(file);
     }
 
   return (
@@ -61,7 +65,7 @@ function DragImg({ uploaded }) {
                 <div className='uploadedFile'>
                     <div className='uploadedImgContainer'>
                         <img 
-                        src={URL.createObjectURL(uploadedFiles[0])} 
+                        src={uploadedFiles[0]} 
                         alt='Загруженное изображение' 
                         className='uploadedImg' />
                         <img src={deleteImage} alt='deleteIconImage' className='uploadedFile__delete' onClick={() => onDeleteHandler()} />

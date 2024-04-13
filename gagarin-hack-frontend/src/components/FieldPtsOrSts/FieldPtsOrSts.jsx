@@ -2,7 +2,7 @@
 import React from 'react';
 import './styles/FieldPtsOrSts.css';
 
-function FieldPtsOrSts({ setSeries, setNumber, setFullName, setDateBirthday, setPlaceOfBirthday, setNumberPage }) {
+function FieldPtsOrSts({ setSeries, setNumber, setGender, setFullName, setDateBirthday, setPlaceOfBirthday, setNumberPage }) {
   const handleSeriesChange = (e) => {
     setSeries(e.target.value);
   };

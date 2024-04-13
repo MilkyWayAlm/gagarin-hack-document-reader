@@ -2,17 +2,19 @@ import React from 'react'
 
 import prev from '../../assets/next.svg'
 import './styles/DocumentView.css'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import ShowImg from '../../components/ShowImg/ShowImg'
 import DocumentFieldsView from '../../components/DocumentFieldsView/DocumentFieldsView'
 
 function DocumentView({documents, setDocuments}) {
     const { id }  = useParams()
     const document = documents.find(doc => doc.id === Number(id)); 
+    const navigate = useNavigate();
 
     const deleteDocument = () => {
-        console.log('DELETE')
+        console.log('DELETE', document.image)    
         setDocuments(documents.filter(doc => doc.id !== Number(id)));
+        navigate('/')
     }
 
   return (
@@ -21,14 +23,17 @@ function DocumentView({documents, setDocuments}) {
             <Link to='/'><img src={prev} alt="prev Icon" /></Link>
             <h1 className='documentView__title-text'>Документ</h1>
         </div>
-        <div className='documentView__form'>
+        {document 
+        
+        ? <div className='documentView__form'>
             <div className='documentView-form__image'>
-                <ShowImg photo={document.photo}/>
+                <ShowImg image={document.image}/>
             </div>
-            <div className='disabledView'>
                 <DocumentFieldsView document={document} deleteDocument={deleteDocument}/>
             </div>
-        </div>
+        : <div className='documentNotFound'>Документ не найден</div>
+        }
+        
     </div>
   )
 }

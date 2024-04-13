@@ -2,12 +2,12 @@ import React from 'react'
 
 import './styles/ShowImg.css'
 
-function ShowImg({photo}) {
+function ShowImg({image}) {
   return (
     <div className='imgFile'>
         <div className='imgFileContainer'>
             <img 
-                src={photo} 
+                src={image} 
                 alt='Загруженное изображение'
                 className='imgFileContainer__img' />
         </div>            
