@@ -13,13 +13,14 @@
 .imgFileContainer__img, .imgFileContainer{
     width: inherit;
     height: inherit;
+    border-radius: 17px;
 }
 
 .imgFileEmpty{
-    width: 247px;
-    height: 247px;
+    width: 301px;
+    height: 398px;
     border: 1px solid #8A8A8A;
-    border-radius: 10px;
+    border-radius: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,6 +31,12 @@
 /********* MOBILE **********/
 @media (max-width: 576px) {
     .imgFile{
+        width: 330px;
+        height: 231px;
+        border-radius: 17px;
+    }
+
+    .imgFileEmpty{
         width: 330px;
         height: 231px;
         border-radius: 17px;

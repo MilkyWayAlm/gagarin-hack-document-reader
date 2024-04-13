@@ -41,6 +41,7 @@
 .uploadedImg, .uploadedImgContainer{
     width: inherit;
     height: inherit;
+    border-radius: 17px;
 }
 
 .uploadedFile__delete{

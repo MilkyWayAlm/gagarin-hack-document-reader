@@ -56,6 +56,12 @@
     display: none;
 }
 
+.notFoundDate{
+    font-size: 12px;
+    color: rgb(216, 45, 45);
+    font-weight: 600;
+}
+
 /********* MOBILE **********/
 @media (max-width: 576px) {
     .addDocument__title-text{

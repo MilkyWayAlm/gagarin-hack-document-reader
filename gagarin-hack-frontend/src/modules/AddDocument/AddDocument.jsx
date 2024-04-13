@@ -76,6 +76,11 @@ function AddDocument({ uploaded, setDocuments, documents }) {
           <div className={isDisabled ? 'disabled' : ''}>
             <MyBtn onClick={() => sendDataToServer(uploadedFiles[0])}>Обработать данные</MyBtn>
           </div>
+          {
+            (!serverResponse || (serverResponse.type === "notFound" && (
+              <div className='notFoundDate'>Данные не найдены!</div>
+            )))
+          }
         </div>
         <div>
         <DocumentFields 
