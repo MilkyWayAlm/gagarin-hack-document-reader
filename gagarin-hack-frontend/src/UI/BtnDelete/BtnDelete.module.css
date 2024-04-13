@@ -13,4 +13,5 @@
 
 .btnDelete:hover{
     background-color: #C50000;
+    cursor: pointer;
 }

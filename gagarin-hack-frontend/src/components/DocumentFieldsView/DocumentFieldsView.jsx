@@ -5,7 +5,7 @@ import './styles/DocumentFieldsView.css'
 import FieldPtsOrStsView from '../FieldPtsOrStsView/FieldPtsOrStsView'
 import BtnDelete from '../../UI/BtnDelete/BtnDelete'
 
-function DocumentFieldsView({document}) {
+function DocumentFieldsView({document, deleteDocument}) {
   return (
     <div className='document__fields'>
       <div className='typeDocument'>
@@ -20,8 +20,8 @@ function DocumentFieldsView({document}) {
         ? <FieldDriveLicenseView document={document}/> 
         : <FieldPtsOrStsView document={document}/>}
       </div>
-      <div className='btnAdd'>
-        <BtnDelete>Удалить документ</BtnDelete>
+      <div className='btnDelete'>
+        <BtnDelete onClick={deleteDocument}>Удалить документ</BtnDelete>
       </div>
     </div>
   )

@@ -6,9 +6,14 @@ import { Link, useParams } from 'react-router-dom'
 import ShowImg from '../../components/ShowImg/ShowImg'
 import DocumentFieldsView from '../../components/DocumentFieldsView/DocumentFieldsView'
 
-function DocumentView({documents}) {
+function DocumentView({documents, setDocuments}) {
     const { id }  = useParams()
     const document = documents.find(doc => doc.id === Number(id)); 
+
+    const deleteDocument = () => {
+        setDocuments(documents.filter(doc => doc.id !== Number(id)));
+    }
+
   return (
     <div className='documentView'>
         <div className='documentView__title'>
@@ -20,7 +25,7 @@ function DocumentView({documents}) {
                 <ShowImg photo={document.photo}/>
             </div>
             <div className='disabledView'>
-                <DocumentFieldsView document={document}/>
+                <DocumentFieldsView document={document} deleteDocument={deleteDocument}/>
             </div>
         </div>
     </div>

@@ -27,7 +27,7 @@
             </div>}/>
             <Route path='/document/:id' element={
             <div className='documentViewBlock _container2'>
-              <DocumentView documents={documents}/>
+              <DocumentView documents={documents} setDocuments={setDocuments}/>
             </div>
             } />
             <Route path='/addDocument' element={

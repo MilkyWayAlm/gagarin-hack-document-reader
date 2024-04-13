@@ -2,9 +2,9 @@ import React from 'react'
 
 import cl from "./BtnDelete.module.css"
 
-function BtnDelete({children}) {
+function BtnDelete({children, onClick}) {
   return (
-    <div className={cl.btnDelete}>{children}</div>
+    <div onClick={onClick} className={cl.btnDelete}>{children}</div>
   )
 }
 
