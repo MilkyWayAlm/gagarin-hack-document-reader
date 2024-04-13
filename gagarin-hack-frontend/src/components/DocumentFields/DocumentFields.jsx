@@ -1,3 +1,4 @@
+// DocumentFields.js
 import React, { useState } from 'react';
 import './styles/DocumentFields.css';
 import FieldPtsOrSts from '../FieldPtsOrSts/FieldPtsOrSts';
@@ -5,7 +6,7 @@ import FieldPassport from '../FieldPassport/FieldPassport';
 import MyBtn from '../../UI/MyBtn/MyBtn';
 import FieldDriveLicense from '../FieldDriveLicense/FieldDriveLicense';
 
-function DocumentFields({ setDocumentFields, onClick }) {
+function DocumentFields({ setDocumentFields, documentFields, onClick }) {
   const [type, setType] = useState('');
   const [customType, setCustomType] = useState('');
   const [series, setSeries] = useState('');
@@ -29,7 +30,7 @@ function DocumentFields({ setDocumentFields, onClick }) {
   };
 
   const handleAddDocument = () => {
-    setDocumentFields({
+    const newFields = {
       type: type === "Другое" ? customType : type,
       series,
       number,
@@ -38,7 +39,10 @@ function DocumentFields({ setDocumentFields, onClick }) {
       placeOfBirthday,
       gender,
       numberPage
-    });
+    };
+  
+    setDocumentFields(newFields);
+    onClick(newFields); // передаем newFields вместо documentFields
   };
 
   return (
@@ -85,7 +89,7 @@ function DocumentFields({ setDocumentFields, onClick }) {
         setNumberPage={setNumberPage} />}
       </div>
       <div className='btnAdd'>
-        <MyBtn onClick={onClick}>Добавить в "Мои документы"</MyBtn>
+        <MyBtn onClick={handleAddDocument}>Добавить в "Мои документы"</MyBtn>
       </div>
     </div>
   );

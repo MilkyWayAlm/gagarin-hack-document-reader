@@ -1,3 +1,4 @@
+// AddDocument.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import DragImg from '../../components/DragImg/DragImg';
@@ -24,23 +25,15 @@ function AddDocument({ uploaded, setDocuments, documents }) {
     setIsDisabled(!uploadedFiles || uploadedFiles.length === 0);
   }, [uploadedFiles]);
 
-  const handleAddDocument = () => {
+  const handleAddDocument = (fields) => {
     const newDocument = {
       id: documents.length + 1,
-      photo: '', // Add photo if available
-      type: documentFields.type,
-      series: documentFields.series,
-      number: documentFields.number,
-      fullName: documentFields.fullName,
-      dateBirthday: documentFields.dateBirthday,
-      placeOfBirthday: documentFields.placeOfBirthday,
-      gender: documentFields.gender,
-      numberPage: documentFields.numberPage
+      photo: uploadedFiles.length > 0 ? URL.createObjectURL(uploadedFiles[0]) : '', // Add photo if available
+      ...fields
     };
   
-    console.log(documents)
+    console.log(newDocument);
     setDocuments(prevDocuments => [...prevDocuments, newDocument]);
-    console.log(documents)
   
     // Optionally, clear uploaded files or perform other actions
     setUploadedFiles([]);
@@ -59,7 +52,7 @@ function AddDocument({ uploaded, setDocuments, documents }) {
             <MyBtn>Обработать данные</MyBtn>
           </div>
         </div>
-        <DocumentFields setDocumentFields={setDocumentFields} onClick={handleAddDocument} />
+        <DocumentFields setDocumentFields={setDocumentFields} documentFields={documentFields} onClick={handleAddDocument} />
       </div>
     </div>
   );
