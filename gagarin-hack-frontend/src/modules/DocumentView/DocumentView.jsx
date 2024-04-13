@@ -2,11 +2,13 @@ import React from 'react'
 
 import prev from '../../assets/next.svg'
 import './styles/DocumentView.css'
-import { Link } from 'react-router-dom'
-import DocumentFields from '../../components/DocumentFields/DocumentFields'
+import { Link, useParams } from 'react-router-dom'
 import ShowImg from '../../components/ShowImg/ShowImg'
+import DocumentFieldsView from '../../components/DocumentFieldsView/DocumentFieldsView'
 
-function DocumentView({item}) {
+function DocumentView({documents}) {
+    const { id }  = useParams()
+    const document = documents.find(doc => doc.id === Number(id)); 
   return (
     <div className='documentView'>
         <div className='documentView__title'>
@@ -15,10 +17,10 @@ function DocumentView({item}) {
         </div>
         <div className='documentView__form'>
             <div className='documentView-form__image'>
-                <ShowImg/>
+                <ShowImg photo={document.photo}/>
             </div>
             <div className='disabledView'>
-                <DocumentFields/>
+                <DocumentFieldsView document={document}/>
             </div>
         </div>
     </div>

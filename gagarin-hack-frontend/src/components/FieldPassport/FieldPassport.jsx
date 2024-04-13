@@ -14,10 +14,6 @@ function FieldPassport({ setSeries, setNumber, setFullName, setDateBirthday, set
     setFullName(e.target.value);
   };
 
-  const handleDateBirthdayChange = (e) => {
-    setDateBirthday(e.target.value);
-  };
-
   const handlePlaceOfBirthdayChange = (e) => {
     setPlaceOfBirthday(e.target.value);
   };

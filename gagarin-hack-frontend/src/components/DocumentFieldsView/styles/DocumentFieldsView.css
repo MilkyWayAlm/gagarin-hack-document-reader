@@ -1,0 +1,43 @@
+.typeDocument{
+    background-color: #E3EAF1;
+    border-radius: 17px;
+    padding: 32px 23px 37px 20px;
+}
+
+.typeDocument__text{
+    color: #4B4B4B;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.typeDocument__select, .typeDocument__input{
+    height: 38px;
+    width: 562px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #4B4B4B;
+    font-weight: 700;
+    padding: 0 0 0 17px;
+}
+
+.typeDocument__select:focus, .typeDocument__select:hover, .typeDocument__input:focus, .typeDocument__input:hover{
+    border: 1px solid #C6C6C6;
+    outline: none;
+}
+
+.typeDocument > *:not(:last-child){
+    margin: 0 0 11px 0;
+}
+
+.document__fields{
+    width: 605px;
+}
+
+.mainField{
+    margin: 19px 0 0 0;
+}
+
+.btnAdd{
+    margin: 40px 0 0 0;
+}

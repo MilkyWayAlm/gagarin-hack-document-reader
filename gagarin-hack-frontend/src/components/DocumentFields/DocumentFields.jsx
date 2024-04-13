@@ -72,7 +72,7 @@ function DocumentFields({ setDocumentFields, documentFields, onClick }) {
         setPlaceOfBirthday={setPlaceOfBirthday} 
         setGender={setGender} 
         setNumberPage={setNumberPage} /> 
-        : type === 'В/У' 
+        : type === 'В/У' || type === 'Водительское удостоверение' 
         ? <FieldDriveLicense 
         setSeries={setSeries} 
         setNumber={setNumber} 

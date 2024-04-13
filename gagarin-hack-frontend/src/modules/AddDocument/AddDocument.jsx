@@ -1,6 +1,6 @@
 // AddDocument.js
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import DragImg from '../../components/DragImg/DragImg';
 import MyBtn from '../../UI/MyBtn/MyBtn';
 import DocumentFields from '../../components/DocumentFields/DocumentFields';
@@ -8,6 +8,7 @@ import prev from '../../assets/next.svg';
 import './styles/AddDocument.css';
 
 function AddDocument({ uploaded, setDocuments, documents }) {
+  const navigate = useNavigate();
   const { uploadedFiles, setUploadedFiles } = uploaded;
   const [isDisabled, setIsDisabled] = useState(true);
   const [documentFields, setDocumentFields] = useState({
@@ -37,6 +38,8 @@ function AddDocument({ uploaded, setDocuments, documents }) {
   
     // Optionally, clear uploaded files or perform other actions
     setUploadedFiles([]);
+
+    navigate('/');
   };
 
   return (

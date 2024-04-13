@@ -1,8 +1,8 @@
 .imgFile{
-    width: 247px;
-    height: 247px;
+    width: 301px;
+    height: 398px;
     border: none;
-    border-radius: 10px;
+    border-radius: 17px;
     display: flex;
     align-items: center;
     justify-content: center;

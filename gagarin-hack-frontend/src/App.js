@@ -12,7 +12,7 @@
       {id: 1, photo: '', type: "Паспорт РФ", series: '9912', number: '835963', fullName: 'Гулякина Анна Вадимовна', gender: 'ЖЕН', dateBirthday: '', placeOfBirthday: 'Свердловск', numberPage: '4'},
       {id: 2, photo: '', type: "Паспорт транспортного средства", series: '11 11', number: '111 111', gender: '', dateBirthday: '', placeOfBirthday: '', numberPage: '1'},
       {id: 3, photo: '', type: "Свидетельство о регистрации транспортного средства ", series: '11 11', number: '111 111', gender: '', dateBirthday: '', placeOfBirthday: '', numberPage: '1'},
-      {id: 4, photo: '', type: "Водительское удостоверение", series: '11 11', number: '111 111', gender: '', dateBirthday: '29.12.1997', placeOfBirthday: 'Свердловск', numberPage: '3'},
+      {id: 4, photo: '', type: "Водительское удостоверение", series: '11 11', number: '111 111', fullName: 'Гулякина Анна Вадимовна', gender: '', dateBirthday: '29.12.1997', placeOfBirthday: 'Свердловск', numberPage: '3'},
     ])
 
     return (
@@ -25,7 +25,11 @@
             <div className="documentsBlock _container2">
               <MyDocuments documents={documents}/>
             </div>}/>
-            <Route path='/document/:id' element={<DocumentView/>} />
+            <Route path='/document/:id' element={
+            <div className='documentViewBlock _container2'>
+              <DocumentView documents={documents}/>
+            </div>
+            } />
             <Route path='/addDocument' element={
               <div className='addDocumentBlock _container2'>
                 <AddDocument 

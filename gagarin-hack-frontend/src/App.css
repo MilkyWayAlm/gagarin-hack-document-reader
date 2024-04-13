@@ -33,6 +33,6 @@ body{
   margin: 0 auto;
 }
 
-.documentsBlock, .addDocumentBlock{
+.documentsBlock, .addDocumentBlock, .documentViewBlock{
   margin-top: 46px;
 }
