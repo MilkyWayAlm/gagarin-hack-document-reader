@@ -33,20 +33,34 @@ Team Members:
 Почему именно EasyOCR: [blog.roboflow.com/best-ocr-models-text-recognition](https://blog.roboflow.com/best-ocr-models-text-recognition/)
 
 
-**Серверная часть: (Напишите тут как-то правильным языком)**
-1) API 
-2) FRONTEND 
-3) BACKEND 
+**Серверная часть:**
+1) API реализовано с помощью Docker compose из двух контенеров на FastAPI, в котором один сервис отвечает за обработку запросов извне, а в другом непосредственно происходят распознавание и классификация.
+2) FRONTEND React Реализована автоматическая сборка и загрузка на сервер статической части сайта. https://github.com/l1ghtsource/gagarin-hack-document-reader/blob/main/.github/workflows/front_build_deplloy.yaml
+3) На сервере работает traefik в режиме reverse-proxy. Он разделяет запросы к API и запросы к сайту между докер-контейнерами API и frontend
 
-Может сюда пример работы программы в гифке запиздячить, я хз 
-
+![architecture](architecture.png)
 
 ## Запуск решения для теста
+исходный код фронтенда лежит в gagarin-hack-frontend
+исходный код бэкенда лежит в backend/api
+### Запуск backend:
+настроить .env файл.
+Разместить файлы моделей из models в удобном месте и указать путь на директорию их расположения в EASYOCR_PATH и YOLO_PATH
 
-Для запуска решения можно воспользоваться: ХХХ
+ - чтобы протестировать API достаточно запустить ```docker compose up -f docker-compose-no-traefik.yaml``` тогда по порту, указанному в .env будет доступно API
+ - если надо запустить через traefik, нужно использовать ```docker compose up -f docker-compose-traefik.yaml```
 
-Или: ХХХ 
 
+### Запуск frontend:
+
+- статические файлы сайта должны лежать в директории build, которая в одной директории с файлом compose
+- frontend часть сайта отдается apache сервером через traefik. для этого надо запустить ```docker compose up```
+
+ Можно настроить CI/CD, для этого в репозитории нужно создать secret keys
+ 1. SSH_HOST с IP адресом сервера
+ 2. SSH_KEY с приватным ключом, по которому можно залогиниться на сервер
+ 3. STATIC_FOLDER с путем к папке frontenda. Например ```~/gagarin-hack-document-reader/backend/static_front```
+ тогда сборка будет происходить при запуске workflow
 
 ## Перспективы развития, возможные "узкие места" и методы их решения 
 

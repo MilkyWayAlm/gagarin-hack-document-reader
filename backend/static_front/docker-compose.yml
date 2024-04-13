@@ -15,6 +15,7 @@ services:
       - traefik.http.routers.apache.rule=Host(`statusmd.itatmisis.ru`)
 #      - traefik.http.routers.apache.priority=10
       - traefik.http.routers.apache.entrypoints=web
+      - traefik.http.routers.api.entrypoints=websecure
       - traefik.http.services.apache.loadbalancer.server.port=80
       - traefik.docker.network=web
 
