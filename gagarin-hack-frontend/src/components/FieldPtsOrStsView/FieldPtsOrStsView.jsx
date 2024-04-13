@@ -12,7 +12,7 @@ function FieldPtsOrStsView({ document }) {
         </div>
         <div className='fieldNumberView _fieldView'>
           <p className='fieldView-title'>Номер:</p>
-          <input value={document.number} type='text' className='fieldView-input' style={{width: "290px"}} readOnly/>
+          <input value={document.number} type='text' className='fieldView-input' readOnly/>
         </div>
       </div>
       <div className='numberPageView _fieldView'>

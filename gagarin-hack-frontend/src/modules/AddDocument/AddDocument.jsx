@@ -37,7 +37,7 @@ function AddDocument({ uploaded, setDocuments, documents }) {
     };
   
     console.log(newDocument);
-    setDocuments(prevDocuments => [...prevDocuments, newDocument]);
+    setDocuments(prevDocuments => [...(prevDocuments || []), newDocument]);
   
     // Optionally, clear uploaded files or perform other actions
     setUploadedFiles([]);

@@ -26,3 +26,12 @@
     position: relative;
     background-color: #EFF5FF;
 }
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .imgFile{
+        width: 330px;
+        height: 231px;
+        border-radius: 17px;
+    }
+}

@@ -8,7 +8,7 @@
 
   function App() {
     const [uploadedFiles, setUploadedFiles] = useState([]);
-    const [documents, setDocuments] = useState()
+    const [documents, setDocuments] = useState([])
 
     return (
       <div className="App _container">

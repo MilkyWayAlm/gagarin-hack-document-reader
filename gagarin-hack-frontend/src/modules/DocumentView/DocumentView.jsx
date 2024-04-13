@@ -12,7 +12,7 @@ function DocumentView({documents, setDocuments}) {
     const navigate = useNavigate();
 
     const deleteDocument = () => {
-        console.log('DELETE', document.image)    
+        console.log('DELETE')    
         setDocuments(documents.filter(doc => doc.id !== Number(id)));
         navigate('/')
     }

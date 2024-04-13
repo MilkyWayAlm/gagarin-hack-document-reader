@@ -41,3 +41,23 @@
 .btnDelete{
     margin: 40px 0 0 0;
 }
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .document__fields{
+        width: 330px;
+    }
+
+    .typeDocumentView{
+        padding: 25px 20px;
+    }
+
+    .typeDocumentView__text{
+        font-size: 12px;
+    }
+
+    .typeDocumentView__input{
+        width: 290px;
+        font-size: 12px;
+    }
+}
