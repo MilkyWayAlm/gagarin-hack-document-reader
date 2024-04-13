@@ -48,6 +48,7 @@ function AddDocument({ uploaded, setDocuments, documents }) {
   async function sendDataToServer(image){
     const response = await Service.sendDataToServer(image)
     setServerResponse(response);
+    console.log(response)
   }
 
   return (
