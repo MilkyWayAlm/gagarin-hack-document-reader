@@ -75,16 +75,15 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
 
   return (
     <div className='document__fields'>
+      {confidence !== '' && (
+        <div className='document__characteristics'>
+          <p className='document__confidence'>точность: {confidence}</p>
+          <p className='document__confidence'>время запроса: {timeTaken} мс</p>
+        </div>
+      )}
       <div className='typeDocument'>
         <div className='typeDocument__top'>
-          <p className='typeDocument__text'>Тип документа:</p>
-          {confidence !== '' && (
-            <div>
-              <p className='document__confidence'>точность: {confidence}</p>
-              <p className='document__confidence'>время: {timeTaken}</p>
-            </div>
-          )}
-          
+          <p className='typeDocument__text'>Тип документа:</p>          
         </div>
         <select className='typeDocument__select' value={type} onChange={handleTypeChange}>
           <option disabled value="">Выберите тип документа</option>

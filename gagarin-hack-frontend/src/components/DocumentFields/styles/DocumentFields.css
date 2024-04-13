@@ -57,6 +57,11 @@
     justify-content: center;
 }
 
+.document__characteristics{
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
 
 /********* MOBILE **********/
 @media (max-width: 576px) {
