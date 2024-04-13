@@ -22,6 +22,7 @@ function AddDocument({ uploaded, setDocuments, documents }) {
     gender: '',
     numberPage: ''
   });
+  const [serverResponse, setServerResponse] = useState(null);
 
   useEffect(() => {
     setIsDisabled(!uploadedFiles || uploadedFiles.length === 0);
@@ -43,8 +44,9 @@ function AddDocument({ uploaded, setDocuments, documents }) {
     navigate('/');
   };
 
-  function sendDataToServer(image){
-    const response = Service.sendDataToServer(image)
+  async function sendDataToServer(image){
+    const response = await Service.sendDataToServer(image)
+    setServerResponse(response);
     console.log(response)
   }
 
@@ -61,7 +63,11 @@ function AddDocument({ uploaded, setDocuments, documents }) {
             <MyBtn onClick={() => sendDataToServer(uploadedFiles[0])}>Обработать данные</MyBtn>
           </div>
         </div>
-        <DocumentFields setDocumentFields={setDocumentFields} documentFields={documentFields} onClick={handleAddDocument} />
+        <DocumentFields 
+        setDocumentFields={setDocumentFields} 
+        documentFields={documentFields} 
+        onClick={handleAddDocument}
+        serverResponse={serverResponse}/>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 import React from 'react';
 import './styles/FieldPtsOrSts.css';
 
-function FieldPtsOrSts({ setSeries, setNumber, setGender, setFullName, setDateBirthday, setPlaceOfBirthday, setNumberPage }) {
+function FieldPtsOrSts({ setSeries, setNumber, setGender, setFullName, setDateBirthday, setPlaceOfBirthday, setNumberPage, number, numberPage, series }) {
   const handleSeriesChange = (e) => {
     setSeries(e.target.value);
   };
@@ -20,16 +20,16 @@ function FieldPtsOrSts({ setSeries, setNumber, setGender, setFullName, setDateBi
       <div className='fieldsSeriesAndNumber'>
         <div className='fieldSeries _field'>
           <p className='field-title'>Серия: </p>
-          <input type="text" className='field-input' onChange={handleSeriesChange} />
+          <input value={series} type="text" className='field-input' onChange={handleSeriesChange} />
         </div>
         <div className='fieldNumber _field'>
           <p className='field-title'>Номер:</p>
-          <input type='text' className='field-input' style={{width: "290px"}} onChange={handleNumberChange} />
+          <input value={number} type='text' className='field-input' style={{width: "290px"}} onChange={handleNumberChange} />
         </div>
       </div>
       <div className='numberPage _field'>
         <p className='field-title'>Номер страницы</p>
-        <input type='text' className='field-input' onChange={handleNumberPageChange} />
+        <input value={numberPage} type='text' className='field-input' onChange={handleNumberPageChange} />
       </div>
     </div>
   );
