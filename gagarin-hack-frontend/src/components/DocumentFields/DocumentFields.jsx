@@ -4,7 +4,7 @@ import './styles/DocumentFields.css';
 import FieldPtsOrSts from '../FieldPtsOrSts/FieldPtsOrSts';
 import MyBtn from '../../UI/MyBtn/MyBtn';
 
-function DocumentFields({ setDocumentFields, documentFields, onClick, serverResponse}) {
+function DocumentFields({ setDocumentFields, documentFields, onClick, serverResponse, time}) {
   const [type, setType] = useState('');
   const [customType, setCustomType] = useState('');
   const [series, setSeries] = useState('');
@@ -15,6 +15,7 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
   // const [gender, setGender] = useState('');
   const [numberPage, setNumberPage] = useState('');
   const [confidence, setConfidence] = useState('');
+  const [timeTaken, setTimeTaken] = useState();
 
   const handleTypeChange = (e) => {
     const selectedType = e.target.value;
@@ -54,7 +55,7 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
         setType("Свидетельство о регистрации транспортного средства")
       } else if (serverType === "vehicle_passport"){
         setType("Паспорт транспортного средства")
-      } else if (serverType === "drive_license"){
+      } else if (serverType === "driver_license"){
         setType("Водительское удостоверение")
       } else {
         setType("Другое");
@@ -68,13 +69,20 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
     }
   }, [serverResponse])
 
+  useEffect(() => {
+    setTimeTaken(time)
+  }, [time])
+
   return (
     <div className='document__fields'>
       <div className='typeDocument'>
         <div className='typeDocument__top'>
           <p className='typeDocument__text'>Тип документа:</p>
           {confidence !== '' && (
-            <p className='document__confidence'>точность: {confidence}</p>
+            <div>
+              <p className='document__confidence'>точность: {confidence}</p>
+              <p className='document__confidence'>время: {timeTaken}</p>
+            </div>
           )}
           
         </div>

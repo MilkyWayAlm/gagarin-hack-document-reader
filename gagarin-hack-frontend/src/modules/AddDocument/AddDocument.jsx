@@ -24,6 +24,7 @@ function AddDocument({ uploaded, setDocuments, documents }) {
     numberPage: ''
   });
   const [serverResponse, setServerResponse] = useState(null);
+  const [time, setTime] = useState();
 
   useEffect(() => {
     setIsDisabled(!uploadedFiles || uploadedFiles.length === 0);
@@ -46,9 +47,28 @@ function AddDocument({ uploaded, setDocuments, documents }) {
   };
 
   async function sendDataToServer(image){
-    const response = await Service.sendDataToServer(image)
-    setServerResponse(response);
-    console.log(response)
+    setIsDisabled(true)
+    try{
+      const startTime = new Date();
+
+      const response = await Service.sendDataToServer(image)
+
+      const endTime = new Date();
+
+      const timeTaken = endTime - startTime;
+      console.log(`Время выполнения запроса:${timeTaken} мс`)
+      setTime(timeTaken);
+
+      setServerResponse(response);
+      console.log(response)
+      
+      if(response){
+        setIsDisabled(false);
+      }
+    } catch (error){
+      console.error("Error while sending data to server:", error);
+      setIsDisabled(false);
+    }
   }
 
   return (
@@ -87,7 +107,8 @@ function AddDocument({ uploaded, setDocuments, documents }) {
         setDocumentFields={setDocumentFields} 
         documentFields={documentFields} 
         onClick={handleAddDocument}
-        serverResponse={serverResponse}/>
+        serverResponse={serverResponse}
+        time={time}/>
         </div>
       </div>
     </div>
