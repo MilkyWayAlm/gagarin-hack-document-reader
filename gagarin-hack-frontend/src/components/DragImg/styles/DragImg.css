@@ -29,13 +29,13 @@
 .uploadedFile{
     width: 301px;
     height: 301px;
-    border-radius: 17px;
     border: 1px solid #8A8A8A;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     flex-direction: column;
+    border-radius: 17px;
 }
 
 .uploadedImg, .uploadedImgContainer{
@@ -73,5 +73,15 @@
   .drop-area img{
     width: 47px;
     height: 47px;
+  }
+
+  .uploadedFile__delete{
+    width: 31px;
+    height: 31px;
+  }
+
+  .uploadedFile{
+    width: 330px;
+    height: 155px;
   }
 }

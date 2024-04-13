@@ -17,3 +17,11 @@
 .myBtn.disabled{
     background-color: #AFAFAF;
 }
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .myBtn{
+        height: 37px;
+        font-size: 14px;
+    }
+}

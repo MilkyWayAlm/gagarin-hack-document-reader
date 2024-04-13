@@ -1,4 +1,4 @@
-.fieldPtsOrSts{
+.fieldPtsOrStsView{
     background-color: #E3EAF1;
     border-radius: 17px;
     width: 605px;
@@ -6,25 +6,25 @@
     padding: 34px 20px;
 }
 
-.fieldPtsOrSts > *:not(:last-child){
+.fieldPtsOrStsView > *:not(:last-child){
     margin-bottom: 25px;
 }
 
-.fieldsSeriesAndNumber{
+.fieldsSeriesAndNumberView{
     display: flex;
     gap: 54px;
 }
 
-.field-title{
+.fieldView-title{
     color: #4B4B4B;
     font-size: 15px;
     font-weight: 500;
 }
 
-.field-input{
+.fieldView-input{
     height: 38px;
     border: none;
-    min-width: 218px;
+    width: 218px;
     border-radius: 8px;
     font-size: 15px;
     color: #4B4B4B;
@@ -32,6 +32,26 @@
     padding: 0 0 0 17px;
 }
 
-._field > *:not(:last-child){
+._fieldView > *:not(:last-child){
     margin-bottom: 11px;
+}
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .fieldPtsOrStsView{
+        width: 330px;
+    }
+
+    .fieldView-title{
+        font-size: 12px;
+    }
+
+    .fieldView-input{
+        width: 130px;
+        font-size: 12px;
+    }
+
+    .fieldsSeriesAndNumberView{
+        gap: 26px;
+    }
 }

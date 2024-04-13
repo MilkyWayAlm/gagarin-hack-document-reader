@@ -31,7 +31,7 @@ function FieldPtsOrSts({ fields, setFields }) {
         </div>
         <div className='fieldNumber _field'>
           <p className='field-title'>Номер:</p>
-          <input value={fields.number} type='text' className='field-input' style={{width: "290px"}} onChange={handleNumberChange} />
+          <input value={fields.number} type='text' className='field-input' onChange={handleNumberChange} />
         </div>
       </div>
       <div className='numberPage _field'>

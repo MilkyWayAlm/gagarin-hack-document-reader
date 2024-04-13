@@ -37,3 +37,16 @@
     font-size: 25px;
     font-weight: 600;
 }
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .documentView__title-text{
+        font-size: 20px;
+    }
+
+    .documentView__form{
+        flex-direction: column;
+        gap: 33px;
+    }
+
+}

@@ -16,3 +16,11 @@
     background-color: #C50000;
     cursor: pointer;
 }
+
+/********* MOBILE **********/
+@media (max-width: 576px) {
+    .btnDelete{
+        height: 37px;
+        font-size: 14px;
+    }
+}

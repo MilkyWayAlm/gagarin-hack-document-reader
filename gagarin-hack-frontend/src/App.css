@@ -40,10 +40,10 @@ body{
 /********* MOBILE **********/
 @media (max-width: 576px) {
   ._container{
-    width: 343px;
+    width: 356px;
   }
 
   ._container2{
-    width: 343px;
+    width: 330px;
   }
 }
