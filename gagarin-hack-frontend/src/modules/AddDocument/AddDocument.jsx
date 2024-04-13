@@ -31,13 +31,13 @@ function AddDocument({ uploaded, setDocuments, documents }) {
 
   const handleAddDocument = (fields) => {
     const newDocument = {
-      id: documents.length + 1,
+      id: (documents && documents.length ? documents.length + 1 : 1),
       image: uploadedFiles.length > 0 ? uploadedFiles[0] : '', // Add image if available
-      ...fields
+      ...(fields || {})
     };
   
     console.log(newDocument);
-    setDocuments(prevDocuments => [...prevDocuments, newDocument]);
+    setDocuments(prevDocuments => [...(prevDocuments || []), newDocument]);
   
     // Optionally, clear uploaded files or perform other actions
     setUploadedFiles([]);
@@ -48,13 +48,6 @@ function AddDocument({ uploaded, setDocuments, documents }) {
   async function sendDataToServer(image){
     const response = await Service.sendDataToServer(image)
     setServerResponse(response);
-
-    console.log(response)
-    console.log("ТИП: ", response[0].type)
-    console.log("НОМЕР: ", response[0].number)
-    console.log("СЕРИЯ: ", response[0].series)
-    console.log("ТОЧНОСТЬ ", response[0].confidence)
-    console.log("НОМЕР СТРАНИЦЫ: ", response[0].page_number)
   }
 
   return (
@@ -66,11 +59,18 @@ function AddDocument({ uploaded, setDocuments, documents }) {
       <div className='addDocument__form'>
         <div className='addDocument-form__image'>
           <div className='addDocument-form__btns'>
-            <DragImg uploaded={uploaded} />
-            <div className='camera'>
-              <img src={camera} alt='camera' className='camera-img'/>
-              <div className='camera-text'>Сделать фото</div>
-            </div>
+            {
+              !uploadedFiles || uploadedFiles.length > 0 
+              ? <DragImg uploaded={uploaded}/>
+              : 
+              <div className='emptyUploaded'>
+                <DragImg uploaded={uploaded} />
+                <div className='camera'>
+                  <img src={camera} alt='camera' className='camera-img'/>
+                  <div className='camera-text'>Сделать фото</div>
+                </div>
+              </div>
+            }
           </div>
           <div className={isDisabled ? 'disabled' : ''}>
             <MyBtn onClick={() => sendDataToServer(uploadedFiles[0])}>Обработать данные</MyBtn>

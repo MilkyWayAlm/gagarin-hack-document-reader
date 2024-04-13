@@ -34,7 +34,7 @@
     filter: grayscale(100%);
 }
 
-.addDocument-form__btns{
+.emptyUploaded{
     display: flex;
     gap: 20px;
 }

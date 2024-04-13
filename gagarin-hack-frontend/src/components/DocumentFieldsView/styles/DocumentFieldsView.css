@@ -1,16 +1,16 @@
-.typeDocument{
+.typeDocumentView{
     background-color: #E3EAF1;
     border-radius: 17px;
     padding: 32px 23px 37px 20px;
 }
 
-.typeDocument__text{
+.typeDocumentView__text{
     color: #4B4B4B;
     font-size: 15px;
     font-weight: 500;
 }
 
-.typeDocument__select, .typeDocument__input{
+.typeDocumentView__select, .typeDocumentView__input{
     height: 38px;
     width: 562px;
     border: none;
@@ -21,12 +21,12 @@
     padding: 0 0 0 17px;
 }
 
-.typeDocument__select:focus, .typeDocument__select:hover, .typeDocument__input:focus, .typeDocument__input:hover{
+.typeDocumentView__select:focus, .typeDocumentView__select:hover, .typeDocumentView__input:focus, .typeDocumentView__input:hover{
     border: 1px solid #C6C6C6;
     outline: none;
 }
 
-.typeDocument > *:not(:last-child){
+.typeDocumentView > *:not(:last-child){
     margin: 0 0 11px 0;
 }
 
@@ -34,7 +34,7 @@
     width: 605px;
 }
 
-.mainField{
+.mainFieldView{
     margin: 19px 0 0 0;
 }
 

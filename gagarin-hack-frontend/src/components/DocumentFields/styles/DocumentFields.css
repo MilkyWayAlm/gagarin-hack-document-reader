@@ -64,12 +64,13 @@
 
 
     .typeDocument__select, .typeDocument__input{
+        height: 57px;
         width: 300px;
+        padding: 0 0 0 13px;
     }
 
     .typeDocument__text{
         font-size: 12px;
-        color: red;
     }
 
     .document__fields{

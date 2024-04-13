@@ -45,7 +45,7 @@ function DocumentFields({ setDocumentFields, documentFields, onClick, serverResp
   };
 
   useEffect(() => {
-    if(serverResponse){
+    if(serverResponse && serverResponse.length > 0){
       let serverType = serverResponse[0].type || ' ';
       if (serverType === "personal_passport"){
         setType("Паспорт РФ")

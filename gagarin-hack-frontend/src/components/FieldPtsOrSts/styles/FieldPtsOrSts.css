@@ -12,7 +12,7 @@
 
 .fieldsSeriesAndNumber{
     display: flex;
-    gap: 54px;
+    gap: 104px;
 }
 
 .field-title{
@@ -43,7 +43,15 @@
         width: 330px;
     }
 
+    .fieldsSeriesAndNumber{
+        gap: 45px;
+    }
+
     .field-input{
         width: 120px;
+    }
+
+    .field-title{
+        font-size: 12px;
     }
 }

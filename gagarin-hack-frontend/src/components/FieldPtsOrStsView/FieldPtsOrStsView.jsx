@@ -4,20 +4,20 @@ import './styles/FieldPtsOrStsView.css';
 
 function FieldPtsOrStsView({ document }) {
   return (
-    <div className='fieldPtsOrSts'>
-      <div className='fieldsSeriesAndNumber'>
-        <div className='fieldSeries _field'>
-          <p className='field-title'>Серия: </p>
-          <input value={document.series} type="text" className='field-input'/>
+    <div className='fieldPtsOrStsView'>
+      <div className='fieldsSeriesAndNumberView'>
+        <div className='fieldSeriesView _fieldView'>
+          <p className='fieldView-title'>Серия: </p>
+          <input value={document.series} type="text" className='fieldView-input' readOnly/>
         </div>
-        <div className='fieldNumber _field'>
-          <p className='field-title'>Номер:</p>
-          <input value={document.number} type='text' className='field-input' style={{width: "290px"}}/>
+        <div className='fieldNumberView _fieldView'>
+          <p className='fieldView-title'>Номер:</p>
+          <input value={document.number} type='text' className='fieldView-input' style={{width: "290px"}} readOnly/>
         </div>
       </div>
-      <div className='numberPage _field'>
-        <p className='field-title'>Номер страницы</p>
-        <input value={document.numberPage} type='text' className='field-input'/>
+      <div className='numberPageView _fieldView'>
+        <p className='fieldView-title'>Номер страницы</p>
+        <input value={document.numberPage} type='text' className='fieldView-input' readOnly/>
       </div>
     </div>
   );
