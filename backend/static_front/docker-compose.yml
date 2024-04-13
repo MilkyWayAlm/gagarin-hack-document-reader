@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  apache:
+    image: httpd:latest
+    container_name: my-apache-app
+    networks:
+     - internal
+     - web
+    #ports:
+    #- '8081:80'
+    volumes:
+    - ./build:/usr/local/apache2/htdocs/
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.apache.rule=Host(`statusmd.itatmisis.ru`)
+#      - traefik.http.routers.apache.priority=10
+      - traefik.http.routers.apache.entrypoints=web
+      - traefik.http.services.apache.loadbalancer.server.port=80
+      - traefik.docker.network=web
+
+networks:
+  web:
+    external: true
+  internal:
+    external: false
