@@ -1,5 +1,5 @@
 // FieldPtsOrSts.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import './styles/FieldPtsOrSts.css';
 
 function FieldPtsOrSts({ setSeries, setNumber, setGender, setFullName, setDateBirthday, setPlaceOfBirthday, setNumberPage, number, numberPage, series }) {
@@ -14,6 +14,12 @@ function FieldPtsOrSts({ setSeries, setNumber, setGender, setFullName, setDateBi
   const handleNumberPageChange = (e) => {
     setNumberPage(e.target.value);
   };
+
+  useEffect(() =>{
+    setSeries(series);
+    setNumber(number);
+    setNumberPage(numberPage);
+  }, [series, number, numberPage]);
 
   return (
     <div className='fieldPtsOrSts'>
