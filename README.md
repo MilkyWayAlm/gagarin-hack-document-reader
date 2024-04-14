@@ -35,21 +35,16 @@ Team Members:
 
 **Серверная часть:**
 1) API реализовано с помощью Docker compose из двух контенеров на FastAPI, в котором один сервис отвечает за обработку запросов извне, а в другом непосредственно происходят распознавание и классификация.
-2) FRONTEND React Реализована автоматическая сборка и загрузка на сервер статической части сайта. https://github.com/l1ghtsource/gagarin-hack-document-reader/blob/main/.github/workflows/front_build_deplloy.yaml
+2) Реализована автоматическая сборка и загрузка на сервер статической части сайта: [тык](https://github.com/l1ghtsource/gagarin-hack-document-reader/blob/main/.github/workflows/front_build_deplloy.yaml)
 3) На сервере работает traefik в режиме reverse-proxy. Он разделяет запросы к API и запросы к сайту между докер-контейнерами API и frontend
 
 ![architecture](architecture.png)
 
 ## Запуск решения для теста
-исходный код фронтенда лежит в gagarin-hack-frontend
-исходный код бэкенда лежит в backend/api
-### Запуск backend:
-настроить .env файл.
-Разместить файлы моделей из models в удобном месте и указать путь на директорию их расположения в EASYOCR_PATH и YOLO_PATH
+Настроить .env файл. Разместить файлы моделей из models в удобном месте и указать путь на директорию их расположения в EASYOCR_PATH и YOLO_PATH
 
  - чтобы протестировать API достаточно запустить ```docker compose up -f docker-compose-no-traefik.yaml``` тогда по порту, указанному в .env будет доступно API
  - если надо запустить через traefik, нужно использовать ```docker compose up -f docker-compose-traefik.yaml```
-
 
 ### Запуск frontend:
 
