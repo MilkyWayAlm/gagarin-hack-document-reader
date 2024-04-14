@@ -9,7 +9,7 @@ Team Members:
 4) Егор Чистов - Backend
 5) Груздев Александр - ML Engineer
 
-Презентация: [link](https://drive.google.com/file/d/1fZIjuwKuIodLqORF8AYsbfmmWOpGgiwP/view?usp=sharing)
+Презентация: [link](https://drive.google.com/file/d/1vJ0X-JfoluRvPUIFfoUK5ky-yRLLL6GU/view?usp=sharing)
 
 ## Задача трека "Меркурий"
 
