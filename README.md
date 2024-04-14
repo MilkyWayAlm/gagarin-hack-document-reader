@@ -1,4 +1,4 @@
-# Gagarin_Hack 
+# Gagarin_Hack (2 место)
 
 *Misis status.md team*
 
